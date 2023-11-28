@@ -3,33 +3,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Form</title>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <title>Redirect Page</title>
+    <style>
+        #loading {
+            display: none;
+        }
+    </style>
+    <script>
+        setTimeout(function() {
+            document.getElementById('loading').style.display = 'none';
+            window.location.href = 'https://pablosleuth2.github.io/Source-Engine-Android/download.html'; // Replace with the URL you want to redirect to
+        }, 5000); // 5000 milliseconds (5 seconds) delay
+    </script>
 </head>
 <body>
-
-<form action="https://pablosleuth2.github.io/Source-Engine-Android/download.html" method="post">
-    <!-- Your other form fields go here -->
-
-    <!-- Add the following div for reCAPTCHA with your site key -->
-    <div class="g-recaptcha" data-sitekey="6LfrQR8pAAAAANeUlZ6_6gZse05Yd4EKL0-qHgQw"></div>
-
-    <button type="button" onclick="validateRecaptcha()">Submit</button>
-</form>
-
-<script>
-    function validateRecaptcha() {
-        var response = grecaptcha.getResponse();
-
-        if (response.length === 0) {
-            alert('Please complete the reCAPTCHA.');
-        } else {
-            // Proceed with the form submission or redirect
-            document.forms[0].submit(); // Assuming this is your first (and only) form
-        }
-    }
-</script>
-<p>if you got 405 not allowed error refresh the page</p>
+    <p>Please be patient. The page will wait for 5 seconds before redirecting to the download page.</p>
+    <div id="loading">
+        <img src="loading.gif" alt="Loading...">
+    </div>
 </body>
 </html>
